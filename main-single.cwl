@@ -49,12 +49,12 @@ steps:
     in: []
     out:
       - id: cwl_args_url
-    run: steps/grab-argurl.cwl
+    run: tools/grab-argurl.cwl
   - id: get_wfurl
     in: []
     out:
       - id: cwl_wf_url
-    run: steps/grab-wfurl.cwl
+    run: tools/grab-wfurl.cwl
   - id: input_provenance
     in:
       - id: argurl
@@ -63,7 +63,7 @@ steps:
         source: synapse_config
     out:
       - id: provenance_csv
-    run: steps/provenance.cwl
+    run: tools/provenance.cwl
     label: gather sample provenance
   - id: wf_getindexes
     in:
@@ -75,7 +75,7 @@ steps:
       - id: files
       - id: genome_fasta
       - id: genemodel_gtf
-    run: ./wf-getindexes.cwl
+    run: subworkflows/wf-getindexes.cwl
     label: Get index files
   - id: wf_alignment
     in:
@@ -94,7 +94,7 @@ steps:
       - id: reads_per_gene
       - id: logs
       - id: realigned_reads_sam
-    run: ./wf-alignment-se.cwl
+    run: subworkflows/wf-alignment-se.cwl
     label: Alignment sub-workflow
     scatter:
       - synapseid
@@ -111,7 +111,7 @@ steps:
     out:
       - id: picard_riboints
       - id: picard_refflat
-    run: ./wf-buildrefs.cwl
+    run: subworkflows/wf-buildrefs.cwl
     label: Reference building sub-workflow
     'sbg:x': -516
     'sbg:y': 12
@@ -131,7 +131,7 @@ steps:
         source: output_metrics_filename
     out:
       - id: combined_metrics_csv
-    run: ./wf-metrics.cwl
+    run: subworkflows/wf-metrics.cwl
     label: Metrics sub-workflow
     scatter:
       - aligned_reads_sam
@@ -146,7 +146,7 @@ steps:
           - wf_alignment/reads_per_gene
     out:
       - id: combined_counts
-    run: steps/combine_counts_study.cwl
+    run: tools/combine_counts_study.cwl
     label: Combine read counts across samples
     'sbg:x': -63.8984375
     'sbg:y': 31.5
@@ -157,7 +157,7 @@ steps:
           - wf_metrics/combined_metrics_csv
     out:
       - id: combined_metrics
-    run: steps/combine_metrics_study.cwl
+    run: tools/combine_metrics_study.cwl
     label: Combine Picard metrics across samples
     'sbg:x': 343.8936767578125
     'sbg:y': -158.5
@@ -168,7 +168,7 @@ steps:
           - wf_alignment/logs
     out:
       - id: starlog_merged
-    run: steps/merge_starlog.cwl
+    run: tools/merge_starlog.cwl
     label: merge_starlog
     'sbg:x': -132.7860107421875
     'sbg:y': 294.5
@@ -189,7 +189,7 @@ steps:
       - id: wfurl
         source: get_wfurl/cwl_wf_url
     out: []
-    run: steps/upload_synapse.cwl
+    run: tools/upload_synapse.cwl
   - id: clean_tables
     in:
       - id: count_table
@@ -204,7 +204,7 @@ steps:
       - id: clean_counts
       - id: clean_log
       - id: clean_metrics
-    run: steps/clean_tables.cwl
+    run: tools/clean_tables.cwl
   - id: clean_upload
     in:
       - id: infiles
@@ -221,7 +221,7 @@ steps:
       - id: wfurl
         source: get_wfurl/cwl_wf_url
     out: []
-    run: steps/upload_synapse.cwl
+    run: tools/upload_synapse.cwl
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: ScatterFeatureRequirement
