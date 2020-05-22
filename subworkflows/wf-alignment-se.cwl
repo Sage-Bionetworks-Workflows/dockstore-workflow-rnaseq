@@ -71,7 +71,7 @@ steps:
       - id: reads_per_gene
       - id: splice_junctions
       - id: logs
-    run: steps/star_align-se.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v0.0.1/cwl/star_align-se.cwl
     label: STAR spliced alignment
     'sbg:x': 1044.3306884765625
     'sbg:y': 193
@@ -83,7 +83,7 @@ steps:
         source: synapseid
     out:
       - id: filepath
-    run: steps/synapse-get-tool.cwl
+    run: ../tools/synapse-get-tool.cwl
     'sbg:x': 310
     'sbg:y': -256
   - id: zcat
@@ -95,7 +95,7 @@ steps:
         valueFrom: $(self.nameroot).txt
     out:
       - id: output_uncompressed
-    run: steps/zcat.cwl
+    run: ../tools/zcat.cwl
     'sbg:x': 534.0625
     'sbg:y': -348
 requirements: []

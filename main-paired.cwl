@@ -146,7 +146,7 @@ steps:
           - wf_alignment/reads_per_gene
     out:
       - id: combined_counts
-    run: tools/combine_counts_study.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v0.0.1/cwl/combine_counts_study.cwl
     label: Combine read counts across samples
     'sbg:x': -63.8984375
     'sbg:y': 31.5
@@ -157,7 +157,7 @@ steps:
           - wf_metrics/combined_metrics_csv
     out:
       - id: combined_metrics
-    run: tools/combine_metrics_study.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v0.0.1/cwl/combine_metrics_study.cwl
     label: Combine Picard metrics across samples
     'sbg:x': 343.8936767578125
     'sbg:y': -158.5
@@ -168,7 +168,7 @@ steps:
           - wf_alignment/logs
     out:
       - id: starlog_merged
-    run: tools/merge_starlog.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-rnaseq-utils/v0.0.1/cwl/merge_starlog.cwl
     label: merge_starlog
     'sbg:x': -132.7860107421875
     'sbg:y': 294.5
@@ -204,7 +204,7 @@ steps:
       - id: clean_counts
       - id: clean_log
       - id: clean_metrics
-    run: tools/clean_tables.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-rnaseq-utils/v0.0.1/cwl/clean_tables.cwl
   - id: clean_upload
     in:
       - id: infiles

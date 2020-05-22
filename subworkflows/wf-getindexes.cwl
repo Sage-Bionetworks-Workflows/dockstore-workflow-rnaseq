@@ -27,7 +27,7 @@ steps:
         source: synapseid
     out:
       - id: output_dir
-    run: steps/synapse-recursive-get-tool.cwl
+    run: ../tools/synapse-recursive-get-tool.cwl
     label: Download Index Files from Synapse
   - id: convert_dir
     in:
@@ -35,7 +35,7 @@ steps:
         source: syn_get_index/output_dir
     out:
       - id: files
-    run: steps/directory-to-file-list-tool.cwl
+    run: ../tools/directory-to-file-list-tool.cwl
     label: Convert Directory to File List
   - id: pick_fasta
     in:
@@ -45,7 +45,7 @@ steps:
         default: ".fa$"
     out:
       - id: file
-    run: steps/pick-file-from-array.cwl
+    run: ../tools/pick-file-from-array.cwl
     label: Isolate the fasta file from the index array
   - id: pick_gtf
     in:
@@ -55,9 +55,9 @@ steps:
         default: ".gtf$"
     out:
       - id: file
-    run: steps/pick-file-from-array.cwl
+    run: ../tools/pick-file-from-array.cwl
     label: Isolate the gtf file from the index array
-requirements: 
+requirements:
   - class: StepInputExpressionRequirement
   - class: ResourceRequirement
     $mixin: resources-getindexes.yaml
