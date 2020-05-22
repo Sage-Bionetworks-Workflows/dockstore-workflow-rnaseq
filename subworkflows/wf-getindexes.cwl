@@ -60,5 +60,8 @@ steps:
 requirements:
   - class: StepInputExpressionRequirement
   - class: ResourceRequirement
-    $mixin: resources-getindexes.yaml
+    ramMin: 60000
+    coresMin: 15
+    tmpdirMin: 225000
+    outdirMin: 225000
 

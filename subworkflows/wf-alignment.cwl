@@ -118,7 +118,10 @@ steps:
     'sbg:y': 193
 requirements:
   - class: ResourceRequirement
-    $mixin: resources-alignment.yaml
+    ramMin: 60000
+    coresMin: 15
+    tmpdirMin: 225000
+    outdirMin: 225000
 'dct:creator':
   '@id': 'http://orcid.org/0000-0001-9758-0176'
   'foaf:mbox': 'mailto:james.a.eddy@gmail.com'

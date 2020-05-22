@@ -98,7 +98,12 @@ steps:
     run: ../tools/zcat.cwl
     'sbg:x': 534.0625
     'sbg:y': -348
-requirements: []
+requirements:
+  - class: ResourceRequirement
+    ramMin: 60000
+    coresMin: 15
+    tmpdirMin: 225000
+    outdirMin: 225000
 'dct:creator':
   '@id': 'http://orcid.org/0000-0001-9758-0176'
   'foaf:mbox': 'mailto:james.a.eddy@gmail.com'

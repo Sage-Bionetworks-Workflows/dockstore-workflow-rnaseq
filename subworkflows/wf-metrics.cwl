@@ -89,10 +89,13 @@ steps:
     'sbg:x': 192.60113525390625
     'sbg:y': -121
 requirements:
-  - class: MultipleInputFeatureRequirement 
+  - class: MultipleInputFeatureRequirement
   - class: StepInputExpressionRequirement
   - class: ResourceRequirement
-    $mixin: resources-metrics.yaml
+    ramMin: 60000
+    coresMin: 15
+    tmpdirMin: 225000
+    outdirMin: 225000
 'dct:creator':
   '@id': 'http://orcid.org/0000-0001-9758-0176'
   'foaf:mbox': 'mailto:james.a.eddy@gmail.com'
