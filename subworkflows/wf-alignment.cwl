@@ -61,7 +61,7 @@ steps:
         source: synapseid
     out:
       - id: filepath
-    run: tools/synapse-get-tool.cwl
+    run: ../tools/synapse-get-tool.cwl
     label: Download BAM from Synapse
     'sbg:x': 233.5
     'sbg:y': 207
