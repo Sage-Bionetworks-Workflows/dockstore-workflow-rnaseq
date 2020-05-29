@@ -5,6 +5,10 @@ label: main_single
 $namespaces:
   sbg: 'https://www.sevenbridges.com'
 inputs:
+  - id: cwl_wf_url
+    type: string
+  - id: cwl_args_url
+    type: string
   - id: index_synapseid
     type: string
   - id: synapse_config
@@ -45,20 +49,10 @@ outputs:
     'sbg:x': 50.2137451171875
     'sbg:y': 299.5
 steps:
-  - id: get_argurl
-    in: []
-    out:
-      - id: cwl_args_url
-    run: tools/grab-argurl.cwl
-  - id: get_wfurl
-    in: []
-    out:
-      - id: cwl_wf_url
-    run: tools/grab-wfurl.cwl
   - id: input_provenance
     in:
       - id: argurl
-        source: get_argurl/cwl_args_url
+        source: cwl_args_url
       - id: synapseconfig
         source: synapse_config
     out:
@@ -185,9 +179,9 @@ steps:
       - id: synapseconfig
         source: synapse_config
       - id: argurl
-        source: get_argurl/cwl_args_url
+        source: cwl_args_url
       - id: wfurl
-        source: get_wfurl/cwl_wf_url
+        source: cwl_wf_url
     out: []
     run: tools/upload_synapse.cwl
   - id: clean_tables
@@ -217,9 +211,9 @@ steps:
       - id: synapseconfig
         source: synapse_config
       - id: argurl
-        source: get_argurl/cwl_args_url
+        source: cwl_args_url
       - id: wfurl
-        source: get_wfurl/cwl_wf_url
+        source: cwl_wf_url
     out: []
     run: tools/upload_synapse.cwl
 requirements:
