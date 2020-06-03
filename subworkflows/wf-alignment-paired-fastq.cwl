@@ -17,7 +17,7 @@ inputs:
     type: int
   - id: synapse_config
     type: File
-  - id: synapseid_1
+  - id: synapseid
     type: string
   - id: synapseid_2
     type: string
@@ -61,7 +61,7 @@ steps:
       - id: nthreads
         source: nthreads
       - id: output_dir_name
-        source: synapseid_1
+        source: synapseid
     out:
       - id: aligned_reads_sam
       - id: reads_per_gene
@@ -76,7 +76,7 @@ steps:
       - id: synapse_config
         source: synapse_config
       - id: synapseid
-        source: synapseid_1
+        source: synapseid
     out:
       - id: filepath
     run: ../tools/synapse-get-tool.cwl

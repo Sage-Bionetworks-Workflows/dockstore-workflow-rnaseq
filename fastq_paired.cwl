@@ -13,7 +13,7 @@ inputs:
     type: string
   - id: synapse_config
     type: File
-  - id: synapseid_1
+  - id: synapseid
     type: 'string[]'
   - id: synapseid_2
     type: 'string[]'
@@ -77,8 +77,8 @@ steps:
         source: nthreads
       - id: synapse_config
         source: synapse_config
-      - id: synapseid_1
-        source: synapseid_1
+      - id: synapseid
+        source: synapseid
       - id: synapseid_2
         source: synapseid_2
     out:
@@ -89,7 +89,7 @@ steps:
     run: subworkflows/wf-alignment-paired-fastq.cwl
     label: Alignment sub-workflow
     scatter:
-      - synapseid_1
+      - synapseid
       - synapseid_2
     scatterMethod: dotproduct
     'sbg:x': -310.91680908203125
@@ -119,7 +119,7 @@ steps:
       - id: picard_riboints
         source: wf_buildrefs/picard_riboints
       - id: basef
-        source: synapseid_1
+        source: synapseid
       - id: output_metrics_filename
         source: output_metrics_filename
     out:
