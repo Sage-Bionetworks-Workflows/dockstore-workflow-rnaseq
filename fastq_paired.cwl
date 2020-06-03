@@ -13,16 +13,12 @@ inputs:
     type: string
   - id: synapse_config
     type: File
-    'sbg:x': -522.0704956054688
-    'sbg:y': -348.93670654296875
-  - id: synapseid
+  - id: synapseid_1
     type: 'string[]'
-    'sbg:x': -405
-    'sbg:y': -412
+  - id: synapseid_2
+    type: 'string[]'
   - id: nthreads
     type: int
-    'sbg:x': -422
-    'sbg:y': -411
   - id: genstr
     type: string?
   - id: output_metrics_filename
@@ -81,17 +77,20 @@ steps:
         source: nthreads
       - id: synapse_config
         source: synapse_config
-      - id: synapseid
-        source: synapseid
+      - id: synapseid_1
+        source: synapseid_1
+      - id: synapseid_2
+        source: synapseid_2
     out:
       - id: splice_junctions
       - id: reads_per_gene
       - id: logs
       - id: realigned_reads_sam
-    run: subworkflows/wf-alignment-paired-bam.cwl
+    run: subworkflows/wf-alignment-paired-fastq.cwl
     label: Alignment sub-workflow
     scatter:
-      - synapseid
+      - synapseid_1
+      - synapseid_2
     scatterMethod: dotproduct
     'sbg:x': -310.91680908203125
     'sbg:y': -200.39964294433594
@@ -120,7 +119,7 @@ steps:
       - id: picard_riboints
         source: wf_buildrefs/picard_riboints
       - id: basef
-        source: synapseid
+        source: synapseid_1
       - id: output_metrics_filename
         source: output_metrics_filename
     out:

@@ -30,5 +30,5 @@ cwl-runner \
   --preserve-environment CWL_ARGS_URL \
   --tmpdir-prefix tmp/cwl \
   --tmp-outdir-prefix tmp/cwl-out \
-  main-paired.cwl "$DIR"/job.json
+  bam_paired.cwl "$DIR"/job.json
 

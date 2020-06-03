@@ -88,7 +88,7 @@ steps:
       - id: reads_per_gene
       - id: logs
       - id: realigned_reads_sam
-    run: subworkflows/wf-alignment-se.cwl
+    run: subworkflows/wf-alignment-single-fastq.cwl
     label: Alignment sub-workflow
     scatter:
       - synapseid

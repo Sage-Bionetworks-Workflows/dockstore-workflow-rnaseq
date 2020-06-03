@@ -1,0 +1,17 @@
+{
+    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/master/jobs/test-main-paired/job.json",
+    "index_synapseid": "syn20835938",
+    "nthreads": 15,
+    "synapse_parentid": "syn20783166",
+    "synapse_config": {
+        "class": "File",
+        "path": "/etc/synapse/.synapseConfig"
+    },
+    "synapseid_1": [
+        "syn22119344"
+    ],
+    "synapseid_2": [
+        "syn22119345"
+    ]
+}
