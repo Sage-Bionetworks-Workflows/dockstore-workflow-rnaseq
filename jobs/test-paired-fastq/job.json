@@ -1,6 +1,6 @@
 {
     "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/master/jobs/test-main-paired/job.json",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/fastqpaired/jobs/test-paired-fastq/job.json",
     "index_synapseid": "syn20835938",
     "nthreads": 15,
     "synapse_parentid": "syn20783166",
