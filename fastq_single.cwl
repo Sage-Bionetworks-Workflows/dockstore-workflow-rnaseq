@@ -137,10 +137,10 @@ steps:
     in:
       - id: read_counts
         source:
-          - https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v0.0.1/cwl/combine_counts_study.cwl
+          - wf_alignment/reads_per_gene
     out:
       - id: combined_counts
-    run: tools/combine_counts_study.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v0.0.1/cwl/combine_counts_study.cwl
     label: Combine read counts across samples
     'sbg:x': -63.8984375
     'sbg:y': 31.5
