@@ -3,7 +3,7 @@
     "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/fastqpaired/jobs/test-single-fastq/job.json",
     "index_synapseid": "syn20835938",
     "nthreads": 15,
-    "synapse_parentid": "syn20783166",
+    "synapse_parentid": "syn20487171",
     "synapse_config": {
         "class": "File",
         "path": "/etc/synapse/.synapseConfig"
