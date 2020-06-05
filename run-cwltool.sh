@@ -17,18 +17,12 @@ if [[ ! -f "$DIR/job.json" ]]; then
     exit 1
 fi
 
-if [ -z "$2"]; then
+if [[ -z "$2" ]]; then
     echo "Missing argument: main workflow"
     exit 1
 fi
 
 WF=$2
-
-export WORKFLOW_URL=$(utils/giturl.py)
-export CWL_ARGS_URL=$(utils/giturl.py --raw --path "$DIR/job.json")
-
-echo "Created environment variable for provenance: WORKFLOW_URL=$WORKFLOW_URL"
-echo "Created environment variable for provenance: CWL_ARGS_URL=$CWL_ARGS_URL"
 
 echo "Running job defined in $DIR"
 cwl-runner \
