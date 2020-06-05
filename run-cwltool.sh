@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-if [[ "$#" -ne 1 ]]; then
+if [[ -z "$1" ]]; then
     echo "Missing argument: job directory"
     exit 1
 fi
@@ -17,6 +17,13 @@ if [[ ! -f "$DIR/job.json" ]]; then
     exit 1
 fi
 
+if [ -z "$2"]; then
+    echo "Missing argument: main workflow"
+    exit 1
+fi
+
+WF=$2
+
 export WORKFLOW_URL=$(utils/giturl.py)
 export CWL_ARGS_URL=$(utils/giturl.py --raw --path "$DIR/job.json")
 
@@ -30,5 +37,5 @@ cwl-runner \
   --preserve-environment CWL_ARGS_URL \
   --tmpdir-prefix tmp/cwl \
   --tmp-outdir-prefix tmp/cwl-out \
-  bam_paired.cwl "$DIR"/job.json
+  "$WF" "$DIR"/job.json
 
