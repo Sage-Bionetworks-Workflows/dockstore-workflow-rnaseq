@@ -32,6 +32,8 @@ inputs:
     type: string?
     'sbg:x': 211
     'sbg:y': 232
+  - id: strand_specificity
+    type: string?
 outputs:
   - id: combined_metrics_csv
     outputSource:
@@ -52,6 +54,8 @@ steps:
         source: picard_riboints
       - id: output_metrics_filename
         source: output_metrics_filename
+      - id: strand_specificity
+        source: strand_specificity
     out:
       - id: rnaseqmetrics_txt
     run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v0.0.1/cwl/picard_rnaseq_metrics.cwl
