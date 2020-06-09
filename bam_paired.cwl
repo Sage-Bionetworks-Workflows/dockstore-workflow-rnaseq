@@ -29,6 +29,8 @@ inputs:
     type: string?
   - id: synapse_parentid
     type: string
+  - id: strand_specificity
+    type: string?
 outputs:
   - id: combined_counts
     outputSource:
@@ -123,6 +125,8 @@ steps:
         source: synapseid
       - id: output_metrics_filename
         source: output_metrics_filename
+      - id: strand_specificity
+        source: strand_specificity
     out:
       - id: combined_metrics_csv
     run: subworkflows/wf-metrics.cwl
