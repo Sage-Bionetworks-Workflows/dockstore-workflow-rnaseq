@@ -1,0 +1,55 @@
+- job: ../jobs/test-paired-bam/job.json
+  output: 
+    clean_counts: 
+      basename: gene_all_counts_matrix_clean.txt
+      checksum: sha1$caffd937e0db5b4f52240f4e20e8a3bbc3a3fed2
+      class: File
+      size: 181
+    clean_log: 
+      basename: Star_Log_Merged_clean.txt
+      class: File
+    clean_metrics:
+      basename: Study_all_metrics_matrix_clean.txt
+      checksum: sha1$1e432054efb6c7a3358cc060130a41b9ed493632
+      class: File
+      size: 1937
+  tool: ../bam_paired.cwl
+  doc: Test the bam paired end workflow
+  short_name: bam_paired
+- job: ../jobs/test-paired-fastq/job.json
+  output:
+    clean_counts:
+      basename: gene_all_counts_matrix_clean.txt
+      checksum: sha1$d9f23f436eadddbedad7a52b6f31a8db508fb976
+      class: File
+      size: 160
+    clean_log:
+      basename: Star_Log_Merged_clean.txt
+      class: File
+    clean_metrics:
+      basename: Study_all_metrics_matrix_clean.txt
+      checksum: sha1$50f35e20f3e558d71d48adbe1eef5de5c4c6ae24
+      class: File
+      size: 1883
+  tool: ../fastq_paired.cwl
+  doc: Test the fastq paired end workflow
+  short_name: fastq_paired
+- job: ../jobs/test-single-fastq/job.json
+  output:
+    clean_counts:
+      basename: gene_all_counts_matrix_clean.txt
+      checksum: sha1$3f50816d8930c9bde233f10795635aad3b821173
+      class: File
+      size: 161
+    clean_log:
+      basename: Star_Log_Merged_clean.txt
+      class: File
+    clean_metrics:
+      basename: Study_all_metrics_matrix_clean.txt
+      checksum: sha1$aecfb5b609544663d309d2a2b6476ccfe47f238c
+      class: File
+      size: 1832
+  tool: ../fastq_single.cwl
+  doc: Test the fastq single end workflow
+  short_name: fastq_single
+
