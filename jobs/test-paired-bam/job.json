@@ -6,7 +6,7 @@
     "synapse_parentid": "syn22152380",
     "synapse_config": {
         "class": "File",
-        "path": "/etc/synapse/.synapseConfig"
+        "path": "/tmp/.synapseConfig"
     },
     "synapseid": [
         "syn22152313",
