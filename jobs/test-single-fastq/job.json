@@ -1,9 +1,9 @@
 {
     "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/fastqpaired/jobs/test-single-fastq/job.json",
-    "index_synapseid": "syn20835938",
-    "nthreads": 15,
-    "synapse_parentid": "syn20487171",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tests/jobs/test-single-fastq/job.json",
+    "index_synapseid": "syn22152278",
+    "nthreads": 1,
+    "synapse_parentid": "syn22152380",
     "synapse_config": {
         "class": "File",
         "path": "/etc/synapse/.synapseConfig"

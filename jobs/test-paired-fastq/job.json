@@ -1,18 +1,18 @@
 {
     "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/fastqpaired/jobs/test-paired-fastq/job.json",
-    "index_synapseid": "syn20835938",
-    "nthreads": 15,
-    "synapse_parentid": "syn20783166",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tests/jobs/test-paired-fastq/job.json",
+    "index_synapseid": "syn22152278",
+    "nthreads": 1,
+    "synapse_parentid": "syn22152380",
     "synapse_config": {
         "class": "File",
         "path": "/etc/synapse/.synapseConfig"
     },
     "synapseid": [
-        "syn22119344"
+        "syn22152307"
     ],
     "synapseid_2": [
-        "syn22119345"
+        "syn22152308"
     ],
     "strand_specificity": "SECOND_READ_TRANSCRIPTION_STRAND"
 }
