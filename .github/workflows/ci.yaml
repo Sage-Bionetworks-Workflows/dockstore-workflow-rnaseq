@@ -31,7 +31,7 @@ jobs:
           echo "::set-env name=SHORT_SHA::$short_sha"
 
           # create synapse config file for integration test
-          mkdir /etc/synapse/
+          sudo mkdir /etc/synapse/
           OUTPUT_FILE=/etc/synapse/.synapseConfig
           cat > "$OUTPUT_FILE" << EOM
           [authentication]
