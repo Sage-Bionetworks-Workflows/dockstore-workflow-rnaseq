@@ -32,24 +32,18 @@ inputs:
   - id: strand_specificity
     type: string?
 outputs:
-  - id: combined_counts
+  - id: clean_counts
     outputSource:
-      - combine_counts/combined_counts
+      - clean_tables/clean_counts
     type: File
-    'sbg:x': 57.103759765625
-    'sbg:y': 47.5
-  - id: combined_metrics
+  - id: clean_log
     outputSource:
-      - combine_metrics/combined_metrics
+      - clean_tables/clean_log
     type: File
-    'sbg:x': 550
-    'sbg:y': -160
-  - id: starlog_merged
+  - id: clean_metrics
     outputSource:
-      - merge_starlog/starlog_merged
+      - clean_tables/clean_metrics
     type: File
-    'sbg:x': 50.2137451171875
-    'sbg:y': 299.5
 steps:
   - id: input_provenance
     in:
