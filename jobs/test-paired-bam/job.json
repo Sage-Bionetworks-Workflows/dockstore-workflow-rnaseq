@@ -1,6 +1,6 @@
 {
     "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tests/jobs/test-paired-bam/job.json",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/master/jobs/test-paired-bam/job.json",
     "index_synapseid": "syn22152278",
     "nthreads": 1,
     "synapse_parentid": "syn22152380",
