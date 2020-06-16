@@ -87,6 +87,10 @@ You can optionally supply an input parameter that specifies the strandedness of 
 
 If this argument is not provided, the default value of `NONE` will be used. 
 
+## Resource Requirements
+
+Resource requirements are specified using the CWL `ResourceRequirement` class. Each subworkflow contains specific requests for RAM, disk space, and number of threads. These values are set for average-sized RNA Sequencing input files for alignment against the human reference genome. If the default values are not sufficient, please modify the `ResourceRequirement` values in the subworkflow CWL files. 
+
 ## Workflow Outputs
 
 The following output files are uploaded to Synapse during workflow execution:
