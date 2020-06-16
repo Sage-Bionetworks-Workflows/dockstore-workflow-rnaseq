@@ -35,7 +35,7 @@ The run-cwltool.sh script can be used to execute a workflow on a single compute 
 For example, to run the paired-end BAM workflow, you can execute the following command from the base directory:
 
 ```bash
-utils/run-cwltool.sh jobs/test-paired-bam bam_paired.cwl
+./utils/run-cwltool.sh jobs/test-paired-bam bam_paired.cwl
 ```
 
 #### toil execution 
@@ -43,9 +43,9 @@ utils/run-cwltool.sh jobs/test-paired-bam bam_paired.cwl
 - ssh to toil cluster leader node
 - from this directory (presuming the git repo was cloned to the leader),
 - choose a job directory, for example, `jobs/test-paired-bam`
-- execute toil run script: `utils/run-toil.py jobs/test-paired-bam`
+- execute toil run script: `./utils/run-toil.py jobs/test-paired-bam`
 
-Run `./run-toil.py -h` to see more options. Note that there is a `--dry-run`
+Run `./utils/run-toil.py -h` to see more options. Note that there is a `--dry-run`
 option, which can help you to become familiar with the tool.
 
 ### How to Add More Jobs
