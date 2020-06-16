@@ -27,7 +27,7 @@ Subworkflows that the main workflows utilize are present in the [subworkflows](s
 
 #### cwltool execution
 
-The run-cwltool.sh script can be used to execute a workflow on a single compute instance. Two arguments must be provided:
+The run-cwltool.sh script can be used to execute a workflow on a single compute instance using [cwltool](https://pypi.org/project/cwltool/1.0.20160325210917/). Two arguments must be provided:
 
 * A path to your job directory
 * The main workflow file that you want to run
@@ -39,6 +39,8 @@ For example, to run the paired-end BAM workflow, you can execute the following c
 ```
 
 #### toil execution 
+
+[Toil](https://toil.readthedocs.io/en/latest/) is a workflow engine that can execute CWL workflows in the cloud or other compute infrastructures. We have provided a [script](utils/run-toil.py) that can be used to submit workflows on a [Toil Cluster](https://toil.readthedocs.io/en/latest/running/cloud/amazon.html#details-about-launching-a-cluster-in-aws) in AWS. To run the script:
 
 - ssh to toil cluster leader node
 - from this directory (presuming the git repo was cloned to the leader),
@@ -65,17 +67,19 @@ For examples of both `options.json` and `job.json`, see `jobs/test-paired-bam`.
 
 Each workflow requires the following inputs:
 
-* `cwl_wf_url`: A URL that points to a tagged version of the github repository at the time of job submission. "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/5832931a9569d9d8fba26a36146a682870d6f5f7", for example. 
-* `cwl_args_url`: A raw github URL that points to the input parameters file for the job that you are running. "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/5832931a9569d9d8fba26a36146a682870d6f5f7/jobs/test-paired-bam/job.json", for example. 
-* `index_synapseid`: Synapse ID for the folder that contains a STAR-indexed reference genome. An example can be found in `syn22152278`
+* `cwl_wf_url`: A URL that points to a commit or tagged version of this github repository at the time of job submission. "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/5832931a9569d9d8fba26a36146a682870d6f5f7", for example. Guidance on generating a permanent github link can be found [here](https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files#press-y-to-permalink-to-a-file-in-a-specific-commit).
+* `cwl_args_url`: A raw github URL that points to the input parameters file for the job that you are running. "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/5832931a9569d9d8fba26a36146a682870d6f5f7/jobs/test-paired-bam/job.json", for example. To find the raw URL for a file on github, navigate to the file and follow the instructions for generating a [permanent url](https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files#press-y-to-permalink-to-a-file-in-a-specific-commit). You can then click on the `raw` button to open the raw URL in your browser. 
+* `index_synapseid`: A [Synapse](https://www.synapse.org/) ID for the folder that contains a STAR-indexed reference genome. An example can be found in `syn22152278`
 * `nthreads`: An integer value that represents the number of compute threads that the STAR aligner should use. 
-* `synapse_parentid`: Synapse ID for the folder that output tables will be uploaded to. 
-* `synapse_config`: Synapse configuration file that will be used to authenticate data downloads and uploads during workflow execution
-* `synapseid`: List of Synapse ID's that correspond to input reads for processing. For the bam_paired.cwl workflow, the ID's should point to BAM files. For the fastq_paired.cwl workflow, these ID's should point to compressed fastq files for the forward reads. For the fastq_single.cwl workflow, these ID's should point to compressed fastq files. These files must contain a `specimenID` annotation in Synapes
+* `synapse_parentid`: A [Synapse](https://www.synapse.org/) ID for the folder that output tables will be uploaded to. 
+* `synapse_config`: A [Synapse](https://www.synapse.org/) configuration file that will be used to authenticate data downloads and uploads during workflow execution
+* `synapseid`: List of [Synapse](https://www.synapse.org/) ID's that correspond to input reads for processing. For the bam_paired.cwl workflow, the ID's should point to BAM files. For the fastq_paired.cwl workflow, these ID's should point to compressed fastq files for the forward reads. For the fastq_single.cwl workflow, these ID's should point to compressed fastq files. These files must contain a `specimenID` annotation in Synapse
 
 The fastq_paired.cwl workflow also requires the following input:
 
-* `synapseid_2`: A list of Synase ID's that correspond to the reverse reads in compressed fastq.gz format. These files must contain a `specimenID` annotation in Synapse, and this list should be ordered by specimen to match the `synapesid` list.
+* `synapseid_2`: A list of [Synapse](https://www.synapse.org/) ID's that correspond to the reverse reads in compressed fastq.gz format. These files must contain a `specimenID` annotation in Synapse, and this list should be ordered by specimen to match the `synapesid` list.
+
+An example input json file that contains values for these required inputs can be found [here](https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/7d64748a3a6d7cc8cfd9f30fc43c1b9bc79b3b3f/jobs/test-paired-bam/job.json)
 
 ### Optional Job inputs
 
@@ -86,6 +90,8 @@ You can optionally supply an input parameter that specifies the strandedness of 
 * `SECOND_READ_TRANSCRIPTION_STRAND`
 
 If this argument is not provided, the default value of `NONE` will be used. 
+
+An example input json file that contains the required inputs and this optional input can be found [here](https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/7d64748a3a6d7cc8cfd9f30fc43c1b9bc79b3b3f/jobs/test-paired-fastq/job.json)
 
 ## Resource Requirements
 
