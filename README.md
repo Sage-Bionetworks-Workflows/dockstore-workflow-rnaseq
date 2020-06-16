@@ -24,6 +24,43 @@ Three main workflows are present in the root of this repository:
 
 Subworkflows that the main workflows utilize are present in the [subworkflows](subworkflows) folder. 
 
+
+#### cwltool execution
+
+The run-cwltool.sh script can be used to execute a workflow on a single compute instance. Two arguments must be provided:
+
+* A path to your job directory
+* The main workflow file that you want to run
+
+For example, to run the paired-end BAM workflow, you can execute the following command from the base directory:
+
+```bash
+utils/run-cwltool.sh jobs/test-paired-bam bam_paired.cwl
+```
+
+#### toil execution 
+
+- ssh to toil cluster leader node
+- from this directory (presuming the git repo was cloned to the leader),
+- choose a job directory, for example, `jobs/test-paired-bam`
+- execute toil run script: `utils/run-toil.py jobs/test-paired-bam`
+
+Run `./run-toil.py -h` to see more options. Note that there is a `--dry-run`
+option, which can help you to become familiar with the tool.
+
+### How to Add More Jobs
+To add a new job, create a new directory under `jobs`.
+
+Each job directory requires an `options.json`, the set of options used by toil.
+The `options.json` in `jobs/default` contains default options. Additional ones
+can be added (or overwritten) in your job directory's `options.json`. The
+`run-toil.py` script will warn you if any are missing.
+
+Each job directory also requires a `job.json`. This contains the arguments that
+are supplied to the CWL that you specify in your `options.json`.
+
+For examples of both `options.json` and `job.json`, see `jobs/test-paired-bam`.
+
 ## Required Job Inputs
 
 Each workflow requires the following inputs:
