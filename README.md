@@ -18,9 +18,9 @@ This workflow automates and standardizes the processing of bulk RNASeq datasets.
 
 Three main workflows are present in the root of this repository:
 
-*[bam_paired.cwl](bam_paired.cwl): This workflow processes input BAM files from paired-end sequencing reads
-*[fastq_paired.cwl](fastq_paired.cwl): This workflow processes paired end fastq files
-*[fastq_single.cwl](fastq_single.cwl): This workflow processes single end fastq files
+* [bam_paired.cwl](bam_paired.cwl): This workflow processes input BAM files from paired-end sequencing reads
+* [fastq_paired.cwl](fastq_paired.cwl): This workflow processes paired end fastq files
+* [fastq_single.cwl](fastq_single.cwl): This workflow processes single end fastq files
 
 Subworkflows that the main workflows utilize are present in the [subworkflows](subworkflows) folder. 
 
@@ -28,25 +28,25 @@ Subworkflows that the main workflows utilize are present in the [subworkflows](s
 
 Each workflow requires the following inputs:
 
-*`cwl_wf_url`: A URL that points to a tagged version of the github repository at the time of job submission. "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/5832931a9569d9d8fba26a36146a682870d6f5f7", for example. 
-*`cwl_args_url`: A raw github URL that points to the input parameters file for the job that you are running. "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/5832931a9569d9d8fba26a36146a682870d6f5f7/jobs/test-paired-bam/job.json", for example. 
-*`index_synapseid`: Synapse ID for the folder that contains a STAR-indexed reference genome. An example can be found in `syn22152278`
-*`nthreads`: An integer value that represents the number of compute threads that the STAR aligner should use. 
-*`synapse_parentid`: Synapse ID for the folder that output tables will be uploaded to. 
-*`synapse_config`: Synapse configuration file that will be used to authenticate data downloads and uploads during workflow execution
-*`synapseid`: List of Synapse ID's that correspond to input reads for processing. For the bam_paired.cwl workflow, the ID's should point to BAM files. For the fastq_paired.cwl workflow, these ID's should point to compressed fastq files for the forward reads. For the fastq_single.cwl workflow, these ID's should point to compressed fastq files. These files must contain a `specimenID` annotation in Synapes
+* `cwl_wf_url`: A URL that points to a tagged version of the github repository at the time of job submission. "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/5832931a9569d9d8fba26a36146a682870d6f5f7", for example. 
+* `cwl_args_url`: A raw github URL that points to the input parameters file for the job that you are running. "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/5832931a9569d9d8fba26a36146a682870d6f5f7/jobs/test-paired-bam/job.json", for example. 
+* `index_synapseid`: Synapse ID for the folder that contains a STAR-indexed reference genome. An example can be found in `syn22152278`
+* `nthreads`: An integer value that represents the number of compute threads that the STAR aligner should use. 
+* `synapse_parentid`: Synapse ID for the folder that output tables will be uploaded to. 
+* `synapse_config`: Synapse configuration file that will be used to authenticate data downloads and uploads during workflow execution
+* `synapseid`: List of Synapse ID's that correspond to input reads for processing. For the bam_paired.cwl workflow, the ID's should point to BAM files. For the fastq_paired.cwl workflow, these ID's should point to compressed fastq files for the forward reads. For the fastq_single.cwl workflow, these ID's should point to compressed fastq files. These files must contain a `specimenID` annotation in Synapes
 
 The fastq_paired.cwl workflow also requires the following input:
 
-*`synapseid_2`: A list of Synase ID's that correspond to the reverse reads in compressed fastq.gz format. These files must contain a `specimenID` annotation in Synapse, and this list should be ordered by specimen to match the `synapesid` list.
+* `synapseid_2`: A list of Synase ID's that correspond to the reverse reads in compressed fastq.gz format. These files must contain a `specimenID` annotation in Synapse, and this list should be ordered by specimen to match the `synapesid` list.
 
 ### Optional Job inputs
 
 You can optionally supply an input parameter that specifies the strandedness of the library that was generated for your dataset. To do so, add the `strand_specificity` argument to your job.json file. The three valid options for this parameter are:
 
-*`NONE`
-*`FIRST_READ_TRANSCRIPTION_STRAND`
-*`SECOND_READ_TRANSCRIPTION_STRAND`
+* `NONE`
+* `FIRST_READ_TRANSCRIPTION_STRAND`
+* `SECOND_READ_TRANSCRIPTION_STRAND`
 
 If this argument is not provided, the default value of `NONE` will be used. 
 
@@ -54,13 +54,13 @@ If this argument is not provided, the default value of `NONE` will be used.
 
 The following output files are uploaded to Synapse during workflow execution:
 
-*`gene_all_counts_matrix.txt`: Table containing raw gene counts, where row labels are geneid's and column labels are synapseid's for input files
-*`gene_all_counts_matrix_clean.txt`: The same gene count table, but synapseid's have been converted to specimenID's and any duplicate samples were removed
-*`Star_Log_Merged.txt`: Table containing mapping statistics that were parsed from the STAR aligner log files
-*`Star_Log_Merged_clean.txt`: The same mapping statistics table, but synapseid's have been converted to specimenID's and any duplicate samples were removed
-*`Study_all_metrics_matrix.txt`: A table containing statistics about realigned BAM files, as generated by picardtools
-*`Study_all_metrics_matrix_clean.txt`: The same table containing realigned BAM file statistics, but synapseid's have been converted to specimenID's and any duplicate samples were removed
-*`provenance.csv`: A csv file where the first field contains the synapseid's for all input files that were used in the processing workflow, the second field contains the version of the synapseid that was used, and the third field contains the corresponding specimenID from the Synapse annotation
+* `gene_all_counts_matrix.txt`: Table containing raw gene counts, where row labels are geneid's and column labels are synapseid's for input files
+* `gene_all_counts_matrix_clean.txt`: The same gene count table, but synapseid's have been converted to specimenID's and any duplicate samples were removed
+* `Star_Log_Merged.txt`: Table containing mapping statistics that were parsed from the STAR aligner log files
+* `Star_Log_Merged_clean.txt`: The same mapping statistics table, but synapseid's have been converted to specimenID's and any duplicate samples were removed
+* `Study_all_metrics_matrix.txt`: A table containing statistics about realigned BAM files, as generated by picardtools
+* `Study_all_metrics_matrix_clean.txt`: The same table containing realigned BAM file statistics, but synapseid's have been converted to specimenID's and any duplicate samples were removed
+* `provenance.csv`: A csv file where the first field contains the synapseid's for all input files that were used in the processing workflow, the second field contains the version of the synapseid that was used, and the third field contains the corresponding specimenID from the Synapse annotation
 
 ## Tests
 
