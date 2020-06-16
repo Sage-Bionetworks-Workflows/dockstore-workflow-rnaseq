@@ -45,7 +45,6 @@ outputs:
       - clean_tables/clean_metrics
     type: File
 steps:
-# capture the version numbers of input files on Synapse
   - id: input_provenance
     in:
       - id: argurl
@@ -56,7 +55,7 @@ steps:
       - id: provenance_csv
     run: tools/provenance.cwl
     label: gather sample provenance
-# download the indexed reference genome
+    doc: capture the version numbers of input files on Synapse
   - id: wf_getindexes
     in:
       - id: synapseid
@@ -69,7 +68,7 @@ steps:
       - id: genemodel_gtf
     run: subworkflows/wf-getindexes.cwl
     label: Get index files
-# run the alignment sub-workflow
+    doc: download the indexed reference genome
   - id: wf_alignment
     in:
       - id: genome_dir
@@ -89,12 +88,12 @@ steps:
       - id: realigned_reads_sam
     run: subworkflows/wf-alignment-paired-bam.cwl
     label: Alignment sub-workflow
+    doc: run the alignment sub-workflow
     scatter:
       - synapseid
     scatterMethod: dotproduct
     'sbg:x': -310.91680908203125
     'sbg:y': -200.39964294433594
-# run the subworkflow that builds reference files for picard tools
   - id: wf_buildrefs
     in:
       - id: genemodel_gtf
@@ -107,9 +106,9 @@ steps:
       - id: picard_refflat
     run: subworkflows/wf-buildrefs.cwl
     label: Reference building sub-workflow
+    doc: run the subworkflow that builds reference files for picard tools
     'sbg:x': -516
     'sbg:y': 12
-# run the metrics subworkflow
   - id: wf_metrics
     in:
       - id: genome_fasta
@@ -130,13 +129,13 @@ steps:
       - id: combined_metrics_csv
     run: subworkflows/wf-metrics.cwl
     label: Metrics sub-workflow
+    doc: run the metrics subworkflow
     scatter:
       - aligned_reads_sam
       - basef
     scatterMethod: dotproduct
     'sbg:x': 128
     'sbg:y': -185
-# combine read counts across all samples
   - id: combine_counts
     in:
       - id: read_counts
@@ -146,9 +145,9 @@ steps:
       - id: combined_counts
     run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v0.0.1/cwl/combine_counts_study.cwl
     label: Combine read counts across samples
+    doc: combine read counts across all samples
     'sbg:x': -63.8984375
     'sbg:y': 31.5
-# combine picard metrics across all samples
   - id: combine_metrics
     in:
       - id: picard_metrics
@@ -158,9 +157,9 @@ steps:
       - id: combined_metrics
     run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v0.0.1/cwl/combine_metrics_study.cwl
     label: Combine Picard metrics across samples
+    doc: combine picard metrics across all samples
     'sbg:x': 343.8936767578125
     'sbg:y': -158.5
-# merge STAR log files into a single table
   - id: merge_starlog
     in:
       - id: logs
@@ -170,9 +169,9 @@ steps:
       - id: starlog_merged
     run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-rnaseq-utils/v0.0.1/cwl/merge_starlog.cwl
     label: merge_starlog
+    doc: merge STAR log files into a single table
     'sbg:x': -132.7860107421875
     'sbg:y': 294.5
-# upload output files to Synapse
   - id: synapse_upload
     in:
       - id: infiles
@@ -191,7 +190,7 @@ steps:
         source: cwl_wf_url
     out: []
     run: tools/upload_synapse.cwl
-# clean output tables and convert Synapse ID's to specimen ID's
+    doc: upload output files to Synapse
   - id: clean_tables
     in:
       - id: count_table
@@ -207,7 +206,7 @@ steps:
       - id: clean_log
       - id: clean_metrics
     run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-rnaseq-utils/v0.0.1/cwl/clean_tables.cwl
-# upload the cleaned tables to Synapse
+    doc: clean output tables and convert Synapse ID's to specimen ID's
   - id: clean_upload
     in:
       - id: infiles
@@ -225,6 +224,7 @@ steps:
         source: cwl_wf_url
     out: []
     run: tools/upload_synapse.cwl
+    doc: upload the cleaned tables to Synapse
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: ScatterFeatureRequirement
