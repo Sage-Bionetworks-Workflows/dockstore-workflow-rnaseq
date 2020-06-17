@@ -74,12 +74,12 @@ requirements:
                   specimen = "NA"
               print(item + ',' + str(version) + ',' +  specimen, file=open('provenance.csv','a'))
 
-          # Interate through revers fastq inputs nad retrieve specimen ids and version numbers
+          # Interate through reverse fastq inputs nad retrieve specimen ids and version numbers
           for item in data['synapseid_2']:
               version = (syn.get(item, downloadFile=False).versionNumber)
               annotations = syn.getAnnotations(item)
               if annotations:
-                  specimen = annotations['specimenID_2'][0]
+                  specimen = annotations['specimenID'][0]
               else:
                   specimen = "NA"
               print(item + ',' + str(version) + ',' +  specimen, file=open('provenance.csv','a'))
