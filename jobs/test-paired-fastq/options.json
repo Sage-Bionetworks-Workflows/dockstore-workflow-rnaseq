@@ -1,0 +1,13 @@
+{
+  "zone": "us-east-1a",
+  "tmpdir": "/var/lib/toil",
+  "run_name": "def",
+  "log_level": "INFO",
+  "retry_count": "3",
+  "target_time": "1",
+  "default_disk": "450G",
+  "node_types": "m5.4xlarge",
+  "node_storage": "500",
+  "preemptable_compensation": "0.5",
+  "rescue_frequency": "9000"
+}
