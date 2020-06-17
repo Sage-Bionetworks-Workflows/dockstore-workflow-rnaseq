@@ -89,7 +89,8 @@ steps:
     run: subworkflows/wf-alignment-single-fastq.cwl
     label: Alignment sub-workflow
     doc: run the alignment sub-workflow
-    scatter: - synapseid
+    scatter:
+      - synapseid
     'sbg:x': -310.91680908203125
     'sbg:y': -200.39964294433594
   - id: wf_buildrefs
