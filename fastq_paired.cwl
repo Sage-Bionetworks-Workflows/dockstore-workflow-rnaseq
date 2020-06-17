@@ -49,7 +49,7 @@ steps:
         source: synapse_config
     out:
       - id: provenance_csv
-    run: tools/provenance.cwl
+    run: tools/provenance-paired.cwl
     label: gather sample provenance
   - id: wf_getindexes
     in:
