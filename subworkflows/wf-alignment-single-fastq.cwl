@@ -71,7 +71,7 @@ steps:
       - id: reads_per_gene
       - id: splice_junctions
       - id: logs
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v0.0.1/cwl/star_align-se.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v1.0.0/cwl/star_align-se.cwl
     label: STAR spliced alignment
     'sbg:x': 1044.3306884765625
     'sbg:y': 193
