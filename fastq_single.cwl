@@ -154,7 +154,7 @@ steps:
           - wf_metrics/combined_metrics_csv
     out:
       - id: combined_metrics
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.0/cwl/combine_metrics_study.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.1/cwl/combine_metrics_study.cwl
     label: Combine Picard metrics across samples
     doc: combine picard metrics across all samples
     'sbg:x': 343.8936767578125
