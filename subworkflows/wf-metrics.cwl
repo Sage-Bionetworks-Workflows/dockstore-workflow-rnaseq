@@ -58,7 +58,7 @@ steps:
         source: strand_specificity
     out:
       - id: rnaseqmetrics_txt
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.0/cwl/picard_rnaseq_metrics.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.1/cwl/picard_rnaseq_metrics.cwl
     label: Picard CollectRnaSeqMetrics
     'sbg:x': -71
     'sbg:y': -21
@@ -72,7 +72,7 @@ steps:
         source: output_metrics_filename
     out:
       - id: alignmentsummarymetrics_txt
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.0/cwl/picard_alignmentsummary_metrics.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.1/cwl/picard_alignmentsummary_metrics.cwl
     label: Picard CollectAlignmentSummaryMetrics module
     'sbg:x': -72
     'sbg:y': -251
@@ -88,7 +88,7 @@ steps:
         valueFrom: $(inputs.basef).csv
     out:
       - id: combined_metrics_csv
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.0/cwl/combine_metrics_sample.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.1/cwl/combine_metrics_sample.cwl
     label: Combine Picard metrics per sample
     'sbg:x': 192.60113525390625
     'sbg:y': -121

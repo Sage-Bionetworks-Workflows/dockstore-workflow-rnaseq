@@ -36,7 +36,7 @@ steps:
         source: genemodel_gtf
     out:
       - id: picard_refflat
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.0/cwl/prep_refflat.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.1/cwl/prep_refflat.cwl
     label: Build Picard refFlat
     'sbg:x': -322
     'sbg:y': -236
@@ -48,7 +48,7 @@ steps:
         source: aligned_reads_sam
     out:
       - id: picard_riboints
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.0/cwl/prep_riboints.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-picardtools/v1.0.1/cwl/prep_riboints.cwl
     label: Build Picard ribosomal intervals
     'sbg:x': -319
     'sbg:y': -59
