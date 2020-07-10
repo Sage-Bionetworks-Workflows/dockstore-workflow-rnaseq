@@ -1,6 +1,6 @@
 {
-    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/v1.0.0",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/v1.0.0/jobs/uw-dian-mrna/job.json",
+    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/v1.0.1",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/v1.0.1/jobs/uw-dian-mrna/job.json",
     "index_synapseid": "syn20645801",
     "nthreads": 15,
     "synapse_parentid": "syn22247707",
