@@ -14,5 +14,6 @@
     "synapseid_2": [
         "syn22152535"
     ],
-    "strand_specificity": "SECOND_READ_TRANSCRIPTION_STRAND"
+    "strand_specificity": "SECOND_READ_TRANSCRIPTION_STRAND",
+    "column_number": 3
 }
