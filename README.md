@@ -83,7 +83,7 @@ An example input json file that contains values for these required inputs can be
 
 ### Optional Job inputs
 
-You can optionally supply an input parameter that specifies the strandedness of the library that was generated for your dataset. To do so, add the `strand_specificity` argument to your job.json file. The three valid options for this parameter are:
+You can optionally supply an input parameter that specifies the strandedness parameter of the library that will be used by Picard Tools. To do so, add the `strand_specificity` argument to your job.json file. The three valid string options for this parameter are:
 
 * `NONE`
 * `FIRST_READ_TRANSCRIPTION_STRAND`
@@ -91,7 +91,7 @@ You can optionally supply an input parameter that specifies the strandedness of 
 
 If this argument is not provided, the default value of `NONE` will be used. 
 
-To specify the column parse from STAR gene count output, specify one of the following integer arguments:
+To specify the column parse from STAR gene count output, specify the `column_number` parameter. The three valid integer arguments are:
 
 * `2` : counts for unstranded RNA libraries
 * `3`: counts for first read stranded libraries
