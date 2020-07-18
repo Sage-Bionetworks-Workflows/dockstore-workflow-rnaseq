@@ -27,6 +27,8 @@ inputs:
     type: string
   - id: strand_specificity
     type: string?
+  - id: column_number
+    type: int?
 outputs:
   - id: clean_counts
     outputSource:
@@ -140,6 +142,8 @@ steps:
       - id: read_counts
         source:
           - wf_alignment/reads_per_gene
+      - id: column_number
+        source: column_number
     out:
       - id: combined_counts
     run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v1.0.0/cwl/combine_counts_study.cwl
