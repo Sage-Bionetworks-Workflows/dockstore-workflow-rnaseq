@@ -20,7 +20,7 @@
   output:
     clean_counts:
       basename: gene_all_counts_matrix_clean.txt
-      checksum: $sha1$3ebd71a8f9b392379a335397832d75aead9cbe35
+      checksum: sha1$3ebd71a8f9b392379a335397832d75aead9cbe35
       class: File
       size: 160
     clean_log:
