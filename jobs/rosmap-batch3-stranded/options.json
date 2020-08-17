@@ -12,6 +12,6 @@
   "node_storage": "500",
   "preemptable_compensation": "0.5",
   "rescue_frequency": "9000",
-  "cwl": "bam_paired.cwl"
+  "cwl": "fastq_paired.cwl"
 }
 
