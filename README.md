@@ -101,6 +101,21 @@ If this argument is not provided, the default value of `2` will be used. This is
 
 An example input json file that contains the required inputs and these optional inputs can be found [here](https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/7d64748a3a6d7cc8cfd9f30fc43c1b9bc79b3b3f/jobs/test-paired-fastq/job.json)
 
+In addition, you may optionally specify the following parameters for the STAR alignment:
+
+* `sjdbGTFfile` : A gtf annotation file that STAR will use to guide mappings
+* `alignEndsType` : A string specifying the type of read ends alignment
+* `outFilterMismatchNmax` : Integer specifying the maximum number of mismatches per pair
+* `outFilterMultimapScoreRange` : Integer specifying the score range for multi-mapping alignments
+* `outFilterMultimapNmax` : Integer specifying the maximum number of multiple alignments for a read
+* `outFilterScoreMinOverLread` : Integer specifying the minimum score for an alignment to be reported, normalized to read length 
+* `outFilterMatchNminOverLread` : Integer specifying the minimum number of matched bases for an alignment to be reported, normalized to read length
+* `outFilterMatchNmin` : Integer specifying the minimum number of matched bases for an alignment to be reported
+* `alignSJDBoverhangMin` : Integer specifying the minimum block size for annotated spliced alignments 
+* `alignIntronMax` : Integer specifying the maximum intron size
+
+For further details about these parameters, please refer to the [STAR manual](https://chagall.med.cornell.edu/RNASEQcourse/STARmanual.pdf)
+
 ## Resource Requirements
 
 Resource requirements are specified using the CWL `ResourceRequirement` class. Each subworkflow contains specific requests for RAM, disk space, and number of threads. These values are set for average-sized RNA Sequencing input files for alignment against the human reference genome. If the default values are not sufficient, please modify the `ResourceRequirement` values in the subworkflow CWL files. 
