@@ -21,6 +21,27 @@ inputs:
     type: string
   - id: synapseid_2
     type: string
+  - id: sjdbGTFfile
+    type: File?
+  - id: alignEndsType
+    type: string?
+  - id: outFilterMismatchNmax
+    type: int?
+  - id: outFilterMultimapScoreRange
+    type: int?
+  - id: outFilterMultimapNmax
+    type: int?
+  - id: outFilterScoreMinOverLread
+    type: int?
+  - id: outFilterMatchNminOverLread
+    type: int?
+  - id: outFilterMatchNmin
+    type: int?
+  - id: alignSJDBoverhangMin
+    type: int?
+  - id: alignIntronMax
+    type: int?
+
 outputs:
   - id: splice_junctions
     outputSource:
@@ -62,12 +83,32 @@ steps:
         source: nthreads
       - id: output_dir_name
         source: synapseid
+      - id: sjdbGTFfile
+        source: sjdbGTFfile
+      - id: alignEndsType
+        source: alignEndsType
+      - id: outFilterMismatchNmax
+        source: outFilterMismatchNmax
+      - id: outFilterMultimapScoreRange
+        source: outFilterMultimapScoreRange
+      - id: outFilterMultimapNmax
+        source: outFilterMultimapNmax
+      - id: outFilterScoreMinOverLread
+        source: outFilterScoreMinOverLread
+      - id: outFilterMatchNminOverLread
+        source: outFilterMatchNminOverLread
+      - id: outFilterMatchNmin
+        source: outFilterMatchNmin
+      - id: alignSJDBoverhangMin
+        source: alignSJDBoverhangMin
+      - id: alignIntronMax
+        source: alignIntronMax
     out:
       - id: aligned_reads_sam
       - id: reads_per_gene
       - id: splice_junctions
       - id: logs
-    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v1.0.0/cwl/star_align.cwl
+    run: https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-tool-star/v1.0.1/cwl/star_align.cwl
     label: STAR spliced alignment
     'sbg:x': 1044.3306884765625
     'sbg:y': 193
