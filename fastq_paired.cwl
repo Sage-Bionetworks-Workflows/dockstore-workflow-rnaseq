@@ -100,8 +100,6 @@ steps:
         source: synapseid
       - id: synapseid_2
         source: synapseid_2
-      - id: sjdbGTFfile
-        source: sjdbGTFfile
       - id: alignEndsType
         source: alignEndsType
       - id: outFilterMismatchNmax

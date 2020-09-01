@@ -102,8 +102,6 @@ steps:
         source: synapse_config
       - id: synapseid
         source: synapseid
-      - id: sjdbGTFfile
-        source: sjdbGTFfile
       - id: alignEndsType
         source: alignEndsType
       - id: outFilterMismatchNmax
