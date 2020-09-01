@@ -21,8 +21,6 @@ inputs:
     type: string
   - id: synapseid_2
     type: string
-  - id: sjdbGTFfile
-    type: File?
   - id: alignEndsType
     type: string?
   - id: outFilterMismatchNmax

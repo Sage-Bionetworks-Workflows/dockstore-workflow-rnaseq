@@ -27,8 +27,6 @@ inputs:
     type: string
     'sbg:x': 0
     'sbg:y': 0
-  - id: sjdbGTFfile
-    type: File?
   - id: alignEndsType
     type: string?
   - id: outFilterMismatchNmax

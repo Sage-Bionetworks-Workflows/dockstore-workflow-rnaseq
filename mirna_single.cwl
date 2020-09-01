@@ -1,7 +1,7 @@
 class: Workflow
 cwlVersion: v1.0
-id: main_paired
-label: main-paired
+id: main_single
+label: main_single
 $namespaces:
   sbg: 'https://www.sevenbridges.com'
 inputs:
@@ -51,7 +51,6 @@ inputs:
     type: int?
   - id: alignIntronMax
     type: int?
-
 outputs:
   - id: clean_counts
     outputSource:
@@ -87,6 +86,7 @@ steps:
       - id: files
       - id: genome_fasta
       - id: genemodel_gtf
+      - id: mirna_gtf
     run: subworkflows/wf-getindexes.cwl
     label: Get index files
     doc: download the indexed reference genome
@@ -103,7 +103,7 @@ steps:
       - id: synapseid
         source: synapseid
       - id: sjdbGTFfile
-        source: sjdbGTFfile
+        source: wf_getindexes/mirna_gtf
       - id: alignEndsType
         source: alignEndsType
       - id: outFilterMismatchNmax
@@ -127,12 +127,11 @@ steps:
       - id: reads_per_gene
       - id: logs
       - id: realigned_reads_sam
-    run: subworkflows/wf-alignment-paired-bam.cwl
+    run: subworkflows/wf-alignment-single-mirna.cwl
     label: Alignment sub-workflow
     doc: run the alignment sub-workflow
     scatter:
       - synapseid
-    scatterMethod: dotproduct
     'sbg:x': -310.91680908203125
     'sbg:y': -200.39964294433594
   - id: wf_buildrefs
@@ -274,3 +273,4 @@ requirements:
   - class: InlineJavascriptRequirement
   - class: StepInputExpressionRequirement
   - class: MultipleInputFeatureRequirement
+

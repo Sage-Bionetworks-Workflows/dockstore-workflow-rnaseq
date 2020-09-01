@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - addparams
 jobs:
 
   test:

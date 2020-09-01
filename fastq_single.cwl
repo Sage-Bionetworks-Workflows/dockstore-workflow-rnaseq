@@ -33,8 +33,6 @@ inputs:
     type: string?
   - id: column_number
     type: int?
-  - id: sjdbGTFfile
-    type: File?
   - id: alignEndsType
     type: string?
   - id: outFilterMismatchNmax
