@@ -81,8 +81,6 @@ steps:
         source: nthreads
       - id: output_dir_name
         source: synapseid
-      - id: sjdbGTFfile
-        source: sjdbGTFfile
       - id: alignEndsType
         source: alignEndsType
       - id: outFilterMismatchNmax

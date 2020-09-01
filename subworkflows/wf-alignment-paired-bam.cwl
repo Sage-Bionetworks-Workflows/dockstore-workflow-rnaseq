@@ -113,8 +113,6 @@ steps:
     'sbg:y': 93
   - id: star_align
     in:
-      - id: sjdbGTFfile
-        source: sjdbGTFfile
       - id: alignEndsType
         source: alignEndsType
       - id: outFilterMismatchNmax
