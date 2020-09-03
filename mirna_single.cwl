@@ -87,7 +87,7 @@ steps:
       - id: genome_fasta
       - id: genemodel_gtf
       - id: mirna_gtf
-    run: subworkflows/wf-getindexes.cwl
+    run: subworkflows/wf-getindexes-mirna.cwl
     label: Get index files
     doc: download the indexed reference genome
   - id: wf_alignment

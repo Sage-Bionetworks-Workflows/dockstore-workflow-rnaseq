@@ -19,6 +19,7 @@ outputs:
     type: File
     outputSource: pick_gtf/file
   - id: mirna_gtf
+    type: File
     outputSource: pick_mirna/file
 steps:
   - id: syn_get_index
