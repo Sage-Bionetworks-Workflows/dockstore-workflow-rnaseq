@@ -56,7 +56,7 @@
   output:
     clean_counts:
       basename: gene_all_counts_matrix_clean.txt
-      checksum: sha1$3f50816d8930c9bde233f10795635aad3b821173
+      checksum: sha1$72ed9f850e39f67879e3b0c7331c9bfd2141e04f
       class: File
       size: 161
     clean_log:
@@ -64,9 +64,9 @@
       class: File
     clean_metrics:
       basename: Study_all_metrics_matrix_clean.txt
-      checksum: sha1$aecfb5b609544663d309d2a2b6476ccfe47f238c
+      checksum: sha1$c70519497a10b1427d18490df4564e580df5ac15
       class: File
-      size: 1832
+      size: 1783
   tool: ../mirna_single.cwl
   doc: Test the mirna single end workflow
   short_name: mirna_single
