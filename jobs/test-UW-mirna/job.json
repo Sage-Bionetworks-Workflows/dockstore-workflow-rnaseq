@@ -15,7 +15,7 @@
     "synapse_parentid": "syn22352005",
     "synapse_config": {
         "class": "File",
-        "path": "/tmp/.synapseConfig"
+        "path": "/etc/synapse/.synapseConfig"
     },
     "synapseid": [
         "syn22334734",
