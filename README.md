@@ -86,6 +86,8 @@ The mirna_single.cwl workflow also requires the following input:
 
 * `sjdbGTFfile` : A mirNA subset gtf annotation file that STAR will use to guide mappings
 
+An example input json file that contains example parameters for the miRNA workflow can be found [here](https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/blob/master/jobs/test-single-mirna/job.json)
+
 ### Optional Job inputs
 
 You can optionally supply an input parameter that specifies the strandedness parameter of the library that will be used by Picard Tools. To do so, add the `strand_specificity` argument to your job.json file. The three valid string options for this parameter are:
