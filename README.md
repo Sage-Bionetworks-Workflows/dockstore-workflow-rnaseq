@@ -21,6 +21,7 @@ Three main workflows are present in the root of this repository:
 * [bam_paired.cwl](bam_paired.cwl): This workflow processes input BAM files from paired-end sequencing reads
 * [fastq_paired.cwl](fastq_paired.cwl): This workflow processes paired end fastq files
 * [fastq_single.cwl](fastq_single.cwl): This workflow processes single end fastq files
+* [mirna_single.cwl](mirna_single.cwl): This workflow processes single-end fastq files from miRNA libraries 
 
 Subworkflows that the main workflows utilize are present in the [subworkflows](subworkflows) folder. 
 
@@ -81,6 +82,10 @@ The fastq_paired.cwl workflow also requires the following input:
 
 An example input json file that contains values for these required inputs can be found [here](https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/7d64748a3a6d7cc8cfd9f30fc43c1b9bc79b3b3f/jobs/test-paired-bam/job.json)
 
+The mirna_single.cwl workflow also requires the following input:
+
+* `sjdbGTFfile` : A mirNA subset gtf annotation file that STAR will use to guide mappings
+
 ### Optional Job inputs
 
 You can optionally supply an input parameter that specifies the strandedness parameter of the library that will be used by Picard Tools. To do so, add the `strand_specificity` argument to your job.json file. The three valid string options for this parameter are:
@@ -103,7 +108,6 @@ An example input json file that contains the required inputs and these optional 
 
 In addition, you may optionally specify the following parameters for the STAR alignment:
 
-* `sjdbGTFfile` : A gtf annotation file that STAR will use to guide mappings
 * `alignEndsType` : A string specifying the type of read ends alignment
 * `outFilterMismatchNmax` : Integer specifying the maximum number of mismatches per pair
 * `outFilterMultimapScoreRange` : Integer specifying the score range for multi-mapping alignments
@@ -114,7 +118,7 @@ In addition, you may optionally specify the following parameters for the STAR al
 * `alignSJDBoverhangMin` : Integer specifying the minimum block size for annotated spliced alignments 
 * `alignIntronMax` : Integer specifying the maximum intron size
 
-For further details about these parameters, please refer to the [STAR manual](https://chagall.med.cornell.edu/RNASEQcourse/STARmanual.pdf)
+For further details about these parameters, please refer to the [STAR manual](https://chagall.med.cornell.edu/RNASEQcourse/STARmanual.pdf
 
 ## Resource Requirements
 
