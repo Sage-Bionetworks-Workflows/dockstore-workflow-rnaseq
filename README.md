@@ -70,7 +70,7 @@ Each workflow requires the following inputs:
 
 * `cwl_wf_url`: A URL that points to a commit or tagged version of this github repository at the time of job submission. "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/5832931a9569d9d8fba26a36146a682870d6f5f7", for example. Guidance on generating a permanent github link can be found [here](https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files#press-y-to-permalink-to-a-file-in-a-specific-commit).
 * `cwl_args_url`: A raw github URL that points to the input parameters file for the job that you are running. "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/5832931a9569d9d8fba26a36146a682870d6f5f7/jobs/test-paired-bam/job.json", for example. To find the raw URL for a file on github, navigate to the file and follow the instructions for generating a [permanent url](https://help.github.com/en/github/managing-files-in-a-repository/getting-permanent-links-to-files#press-y-to-permalink-to-a-file-in-a-specific-commit). You can then click on the `raw` button to open the raw URL in your browser. 
-* `index_synapseid`: A [Synapse](https://www.synapse.org/) ID for the folder that contains a STAR-indexed reference genome. An example can be found in `syn22152278`
+* `index_synapseid`: A [Synapse](https://www.synapse.org/) ID for the folder that contains a STAR-indexed reference genome. An example can be found in `syn22152278`. Two gtf files must be presesnt in this folder to run the `mirna_single.cwl` workflow: A main gtf file with the filename extension ".annotation.gtf" and a gtf file that contains only miRNA annotations with the filename extension ".subset.gtf". An example of a miRNA-compatible reference genome folder can be found in `syn22342700` 
 * `nthreads`: An integer value that represents the number of compute threads that the STAR aligner should use. 
 * `synapse_parentid`: A [Synapse](https://www.synapse.org/) ID for the folder that output tables will be uploaded to. 
 * `synapse_config`: A [Synapse](https://www.synapse.org/) configuration file that will be used to authenticate data downloads and uploads during workflow execution
@@ -82,11 +82,7 @@ The fastq_paired.cwl workflow also requires the following input:
 
 An example input json file that contains values for these required inputs can be found [here](https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/7d64748a3a6d7cc8cfd9f30fc43c1b9bc79b3b3f/jobs/test-paired-bam/job.json)
 
-The mirna_single.cwl workflow also requires the following input:
-
-* `sjdbGTFfile` : A mirNA subset gtf annotation file that STAR will use to guide mappings
-
-An example input json file that contains example parameters for the miRNA workflow can be found [here](https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/blob/master/jobs/test-single-mirna/job.json)
+An example input json file that contains example parameters for the mirna_single.cwl workflow can be found [here](https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/blob/master/jobs/test-single-mirna/job.json)
 
 ### Optional Job inputs
 
