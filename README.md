@@ -120,7 +120,7 @@ In addition, you may optionally specify the following parameters for the STAR al
 * `alignSJDBoverhangMin` : Integer specifying the minimum block size for annotated spliced alignments 
 * `alignIntronMax` : Integer specifying the maximum intron size
 
-For further details about these parameters, please refer to the [STAR manual](https://chagall.med.cornell.edu/RNASEQcourse/STARmanual.pdf
+For further details about these parameters, please refer to the [STAR manual](https://chagall.med.cornell.edu/RNASEQcourse/STARmanual.pdf)
 
 ## Resource Requirements
 
