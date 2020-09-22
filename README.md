@@ -104,7 +104,7 @@ If this argument is not provided, the default value of `2` will be used. This is
 
 An example input json file that contains the required inputs and these optional inputs can be found [here](https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/7d64748a3a6d7cc8cfd9f30fc43c1b9bc79b3b3f/jobs/test-paired-fastq/job.json)
 
-In addition, you may optionally specify the following parameters for the STAR alignment:
+In addition, you may optionally specify the following parameters for the STAR alignment(Note that it is highly recommended to customize these arguments for the mirna_single.cwl workflow):
 
 * `alignEndsType` : A string specifying the type of read ends alignment
 * `outFilterMismatchNmax` : Integer specifying the maximum number of mismatches per pair

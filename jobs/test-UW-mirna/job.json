@@ -1,6 +1,6 @@
 {
-    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/addparams",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/addparams/jobs/test-UW-mirna/job.json",
+    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/master/jobs/test-UW-mirna/job.json",
     "alignEndsType": "EndToEnd",
     "outFilterMismatchNmax": 1,
     "outFilterMultimapScoreRange": 0,
