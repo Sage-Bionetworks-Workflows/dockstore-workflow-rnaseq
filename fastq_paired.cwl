@@ -29,6 +29,25 @@ inputs:
     type: string?
   - id: column_number
     type: int?
+  - id: alignEndsType
+    type: string?
+  - id: outFilterMismatchNmax
+    type: int?
+  - id: outFilterMultimapScoreRange
+    type: int?
+  - id: outFilterMultimapNmax
+    type: int?
+  - id: outFilterScoreMinOverLread
+    type: int?
+  - id: outFilterMatchNminOverLread
+    type: int?
+  - id: outFilterMatchNmin
+    type: int?
+  - id: alignSJDBoverhangMin
+    type: int?
+  - id: alignIntronMax
+    type: int?
+
 outputs:
   - id: clean_counts
     outputSource:
@@ -81,6 +100,24 @@ steps:
         source: synapseid
       - id: synapseid_2
         source: synapseid_2
+      - id: alignEndsType
+        source: alignEndsType
+      - id: outFilterMismatchNmax
+        source: outFilterMismatchNmax
+      - id: outFilterMultimapScoreRange
+        source: outFilterMultimapScoreRange
+      - id: outFilterMultimapNmax
+        source: outFilterMultimapNmax
+      - id: outFilterScoreMinOverLread
+        source: outFilterScoreMinOverLread
+      - id: outFilterMatchNminOverLread
+        source: outFilterMatchNminOverLread
+      - id: outFilterMatchNmin
+        source: outFilterMatchNmin
+      - id: alignSJDBoverhangMin
+        source: alignSJDBoverhangMin
+      - id: alignIntronMax
+        source: alignIntronMax
     out:
       - id: splice_junctions
       - id: reads_per_gene

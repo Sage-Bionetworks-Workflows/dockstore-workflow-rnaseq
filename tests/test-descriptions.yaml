@@ -52,4 +52,21 @@
   tool: ../fastq_single.cwl
   doc: Test the fastq single end workflow
   short_name: fastq_single
-
+- job: ../jobs/test-single-mirna/job.json
+  output:
+    clean_counts:
+      basename: gene_all_counts_matrix_clean.txt
+      checksum: sha1$72ed9f850e39f67879e3b0c7331c9bfd2141e04f
+      class: File
+      size: 161
+    clean_log:
+      basename: Star_Log_Merged_clean.txt
+      class: File
+    clean_metrics:
+      basename: Study_all_metrics_matrix_clean.txt
+      checksum: sha1$c70519497a10b1427d18490df4564e580df5ac15
+      class: File
+      size: 1783
+  tool: ../mirna_single.cwl
+  doc: Test the mirna single end workflow
+  short_name: mirna_single

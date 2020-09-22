@@ -86,7 +86,8 @@ steps:
       - id: files
       - id: genome_fasta
       - id: genemodel_gtf
-    run: subworkflows/wf-getindexes.cwl
+      - id: mirna_gtf
+    run: subworkflows/wf-getindexes-mirna.cwl
     label: Get index files
     doc: download the indexed reference genome
   - id: wf_alignment
@@ -101,6 +102,8 @@ steps:
         source: synapse_config
       - id: synapseid
         source: synapseid
+      - id: sjdbGTFfile
+        source: wf_getindexes/mirna_gtf
       - id: alignEndsType
         source: alignEndsType
       - id: outFilterMismatchNmax
@@ -124,7 +127,7 @@ steps:
       - id: reads_per_gene
       - id: logs
       - id: realigned_reads_sam
-    run: subworkflows/wf-alignment-single-fastq.cwl
+    run: subworkflows/wf-alignment-single-mirna.cwl
     label: Alignment sub-workflow
     doc: run the alignment sub-workflow
     scatter:

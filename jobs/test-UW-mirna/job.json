@@ -1,0 +1,32 @@
+{
+    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/master/jobs/test-UW-mirna/job.json",
+    "alignEndsType": "EndToEnd",
+    "outFilterMismatchNmax": 1,
+    "outFilterMultimapScoreRange": 0,
+    "outFilterMultimapNmax": 10,
+    "outFilterScoreMinOverLread": 0,
+    "outFilterMatchNminOverLread": 0,
+    "outFilterMatchNmin": 16,
+    "alignSJDBoverhangMin": 1000,
+    "alignIntronMax": 1,
+    "index_synapseid": "syn22337116",
+    "nthreads": 1,
+    "synapse_parentid": "syn22352005",
+    "synapse_config": {
+        "class": "File",
+        "path": "/etc/synapse/.synapseConfig"
+    },
+    "synapseid": [
+        "syn22334734",
+        "syn22334729",
+        "syn22334741",
+        "syn22334744",
+        "syn22334745",
+        "syn22334706",
+        "syn22334712",
+        "syn22334731",
+        "syn22334728",
+        "syn22334714"
+    ]
+}
