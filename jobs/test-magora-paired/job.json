@@ -1,6 +1,6 @@
 {
     "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/v1.1.5",
-    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/v1.1.5/jobs/test_magora_paired/job.json",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/v1.1.5/jobs/test-magora-paired/job.json",
     "index_synapseid": "syn23538578",
     "synapse_parentid": "syn23557559",
     "nthreads": 15,
