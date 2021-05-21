@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - updateci
 jobs:
 
   test:
@@ -26,8 +27,8 @@ jobs:
           python -m pip install pipenv
           pipenv install --dev
           short_sha=${GITHUB_SHA::8}
-          echo "::set-env name=SHORT_SHA::$short_sha"
-
+          echo "SHORT_SHA=${short_sha}" >> $GITHUB_ENV
+          
           # create synapse config file for integration test
           OUTPUT_FILE=/tmp/.synapseConfig
           cat > "$OUTPUT_FILE" << EOM
