@@ -1,0 +1,17 @@
+{
+  "zone": "us-east-1a",
+  "cluster_name": "rna-seq-reprocessing-scicomp-toil-cluster-v001",
+  "tmpdir": "/var/lib/toil",
+  "run_name": "uva",
+  "log_level": "DEBUG",
+  "retry_count": "3",
+  "target_time": "1",
+  "max_nodes": "50",
+  "default_disk": "450G",
+  "node_types": "m5.4xlarge",
+  "node_storage": "500",
+  "preemptable_compensation": "0.5",
+  "rescue_frequency": "9000",
+  "cwl": "fastq_paired.cwl"
+}
+
