@@ -69,9 +69,9 @@ steps:
   - id: star_align
     in:
       - id: mate_1_fastq
-        source: zcat_1/output_uncompressed
+        source: synapse_get_tool_1/filepath
       - id: mate_2_fastq
-        source: zcat_2/output_uncompressed
+        source: synapse_get_tool_2/filepath
       - id: genstr
         source: genstr
       - id: genome_dir
@@ -130,30 +130,6 @@ steps:
     run: ../tools/synapse-get-tool.cwl
     'sbg:x': 310
     'sbg:y': -256
-  - id: zcat_1
-    in:
-      - id: input_gzs
-        source: synapse_get_tool_1/filepath
-      - id: output_basename
-        source: synapse_get_tool_1/filepath
-        valueFrom: $(self.nameroot).txt
-    out:
-      - id: output_uncompressed
-    run: ../tools/zcat.cwl
-    'sbg:x': 534.0625
-    'sbg:y': -348
-  - id: zcat_2
-    in:
-      - id: input_gzs
-        source: synapse_get_tool_2/filepath
-      - id: output_basename
-        source: synapse_get_tool_2/filepath
-        valueFrom: $(self.nameroot).txt
-    out:
-      - id: output_uncompressed
-    run: ../tools/zcat.cwl
-    'sbg:x': 534.0625
-    'sbg:y': -348
 requirements:
   - class: ResourceRequirement
     ramMin: 60000
