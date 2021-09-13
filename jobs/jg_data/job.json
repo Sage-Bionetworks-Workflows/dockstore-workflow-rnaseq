@@ -4,8 +4,8 @@
         "class": "File"
     }, 
     "nthreads": 15, 
-    "cwl_args_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/sra/jobs/jg_data/job.json", 
-    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/sra/jobs/jg_data/options.json", 
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/sra/jobs/jg_data/job.json", 
+    "cwl_wf_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/sra/jobs/jg_data/options.json", 
     "synapseid_2": [
         "syn26161628", 
         "syn26161541", 
