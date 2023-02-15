@@ -1,0 +1,25 @@
+{
+    "cwl_wf_url": "https://github.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/tree/benchmark",
+    "cwl_args_url": "https://raw.githubusercontent.com/Sage-Bionetworks-Workflows/dockstore-workflow-rnaseq/benchmark/jobs/sbi-benchmark/job.json",
+    "index_synapseid": "syn51104750",
+    "nthreads": 15,
+    "synapse_config": {
+        "class": "File",
+        "path": "/tmp/.synapseConfig"
+    },
+    "synapse_parentid": "syn25810549",
+    "strand_specificity": "SECOND_READ_TRANSCRIPTION_STRAND",
+    "column_number": 4,
+    "synapseid": [
+        "syn51073895",
+        "syn51073926",
+        "syn51074860",
+        "syn51074059",
+        "syn51075137",
+        "syn51074710",
+        "syn51074312",
+        "syn51075474",
+        "syn51075885",
+        "syn51075962"
+    ]
+}
